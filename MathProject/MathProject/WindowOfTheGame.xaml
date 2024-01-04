@@ -1,0 +1,46 @@
+﻿<Window x:Class="MathProject.WindowOfTheGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MathProject"
+        mc:Ignorable="d"
+        Title="WindowOfTheGame" Height="450" Width="800"
+       ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="ResultTextBlockStyle" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsResultDisplayed}" Value="True">
+                    <Setter Property="Background" Value="#FFBEE1E2"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="0,0,0,-6">
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\User\Desktop\רקענסיון.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="264" Height="340">
+            <TextBlock x:Name="questionTextBlock" FontSize="20" Foreground="Black" FontFamily="Britannic Bold"/>
+            <TextBox x:Name="answerTextBox" Width="152" Margin="0 10 0 10" FontSize="20" FontFamily="Britannic"/>
+            <Button x:Name="checkAnswerButton" Content="Check Answer" HorizontalAlignment="Center" FontSize="20" Click="CheckAnswer_Click" />
+            <Image x:Name="afterCheckAnswerImage" Source="C:\Users\User\Downloads\GOOFBOB2.png" Width="98" Height="132" Visibility="Collapsed"/>
+            <TextBlock x:Name="resultTextBlock" MinWidth="261" Margin="0 10 0 10" Foreground="Black" Height="56" FontFamily="Elephant" Background="#FFBEE1E2" Width="264"/>
+            <Image x:Name="wrongAnswerImage" Source="C:\Users\User\Downloads\BadBOB.png" Width="102" Height="96" Visibility="Collapsed" RenderTransformOrigin="0.5,0.761"/>
+            <Image x:Name="reasonableWrongAnswerImage" Source="C:\Users\User\Downloads\BadBOB.png" Width="200" Height="200" Visibility="Collapsed"/>
+
+        </StackPanel>
+        <MediaElement x:Name="BOBMediaElement" LoadedBehavior="Play" Source="C:\Users\User\source\repos\MathProject\MathProject\BOB.gif" Visibility="Visible" RenderTransformOrigin="-1.924,1.05" Margin="638,18,0,318" />
+        <Image x:Name="finishButton" Source="C:\Users\User\Desktop\סיום.png" Visibility="Collapsed" Margin="126,89,350,88"/>
+        <MediaElement x:Name="PATBOBMediaElement" LoadedBehavior="Play" Source="C:\Users\User\source\repos\MathProject\MathProject\PATBOB.gif" Visibility="Visible" RenderTransformOrigin="-1.924,1.05" Margin="0,-9,674,271" />
+        <Image x:Name="completionGif" Source="C:\Users\User\Desktop\גביע.PNG" Visibility="Collapsed" Margin="406,117,135,144" RenderTransformOrigin="0.691,0.5"/>
+
+        <MediaElement x:Name="BOBYESMediaElement" LoadedBehavior="Manual" Source="C:\Users\User\source\repos\MathProject\MathProject\YourBOBYESMediaElementFile.mp3"/>
+        <Image x:Name="BOBfinishButton" Source="C:\Users\User\Pictures\FINISHBOB.png" Visibility="Collapsed" Margin="94,56,490,195"/>
+
+
+    </Grid>
+</Window>
